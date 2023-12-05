@@ -1,0 +1,31 @@
+let toggleNavStatus = false;
+/* false because were starting with nav bar closed */
+let toggleNav = function() {
+let getSidebar =  document.querySelector(".nav-sidebar");
+let getSidebarUl = document.querySelector(".nav-sidebar ul");
+let getSidebarTitle = document.querySelector(".nav-sidebar span");
+let getSidebarLinks = document.querySelectorAll(".nav-sidebar a");
+/* a represents links */
+if(toggleNavStatus === false){
+    getSidebarUl.style.visibility = "visible";
+    getSidebar.style.width = "280px";
+    getSidebarTitle.style.opacity  ="0.5";
+
+    let arrayLength = getSidebarLinks.length;
+    for(let i = 0; i < arrayLength; i++){
+        getSidebarLinks[i].style.opacity = "1";
+    }
+toggleNavStatus === true;
+
+} else if (toggleNavStatus === true){
+    getSidebarUl.style.visibility = "hidden";
+        getSidebar.style.width = "50px";
+        getSidebarTitle.style.opacity  ="0";
+        
+    let arrayLength = getSidebarLinks.length;
+    for(let i = 0; i < arrayLength; i++){
+        getSidebarLinks[i].style.opacity = "0";
+    }
+toggleNavStatus === false;
+}
+};
